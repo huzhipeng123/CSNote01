@@ -11,6 +11,7 @@ public class demo03 {
         System.out.println("请输入数组大小：");
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
+        sc.close();
         int[] array = new int[N];
         Random random = new Random();
         for(int i = 0; i < N; i++){
@@ -53,7 +54,7 @@ public class demo03 {
      * 遍历数组，找到其中的重复元素
      * @param array
      */
-    private static Set<Integer> duplicateOfArray(int[] array) {
+    public static Set<Integer> duplicateOfArray(int[] array) {
         if(array == null || array.length < 2){
             return null;
         }

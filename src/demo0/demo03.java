@@ -1,4 +1,4 @@
-package Demo0;
+package demo0;
 
 import java.util.*;
 

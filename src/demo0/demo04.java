@@ -1,4 +1,4 @@
-package Demo0;
+package demo0;
 
 import java.util.Scanner;
 
@@ -17,7 +17,34 @@ public class demo04 {
         };
         System.out.println("请输入你要查找的数字：");
         Scanner sc = new Scanner(System.in);
-        
+        int target = sc.nextInt();
         sc.close();
+        if(!find(matrix, target)) {
+        	System.out.println("未找到该元素");
+        }
     }
+
+    /**
+     * 二维数组中
+     * @param matrix
+     * @param target
+     */
+	private static boolean find(int[][] matrix, int target) {
+		if(matrix == null) {
+			return false;
+		}
+		int p = 0;
+		int q = matrix[0].length - 1;
+		while(p < matrix.length && q >= 0) {
+			if(matrix[p][q] < target) {
+				p++;
+			}else if(matrix[p][q] > target) {
+				q--;
+			}else {
+				System.out.println("已找到该元素,坐标为["+p+", "+q+"]");
+				return true;
+			}
+		}
+		return false;
+	}
 }
